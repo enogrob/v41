@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>v41</id>
     <title>v41 (Install)</title>
-    <version>8E</version>
+    <version>8.0</version>
     <authors>Warren Furlow</authors>
     <owners>Roberto Nogueira</owners>
     <summary>HP-41 emulator</summary>
@@ -16,7 +16,7 @@ From its introduction in 1979 until final production in 1990, the Hewlett Packar
     <packageSourceUrl>http://www.hp41.org</packageSourceUrl>
     <tags>HP-41 v41 emulator</tags>
     <copyright>http://www.hp41.org</copyright>
-    <licenseUrl>http://www.hp41.org/LibView.cfm?Command=View&ItemID=458</licenseUrl>
+    <licenseUrl>http://www.hp41.org</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/enogrob/v41/master/images/v41.jpg</iconUrl>
     <releaseNotes></releaseNotes>

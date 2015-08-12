@@ -1,0 +1,7 @@
+Unpack the monolithic setup file with UniExtract or other archive extractor.
+The unpack archive should be either .CAB based or .MSI based.
+Next, only for .CAB based:
+    Record an installation with this command:V41R8.exe /r /f1"X:\setup.iss"
+    Now you can perform a silent installation with the iss file:V41R8.exe /s /f1"X:\setup.iss"
+Next, only for .MSI based:
+    msiexec.exe /i setup.msi /qb

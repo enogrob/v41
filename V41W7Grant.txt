@@ -1,0 +1,114 @@
+@echo off
+cls
+echo SAVE THIS FILE AS V41W7Grant.cmd and run it as administrator after V41 install!
+
+:mod0
+echo.
+echo.
+echo Run this script on Windows 7 (32 or 64 bit) only.
+echo.
+echo This command script change the permissions for the user "users" 
+echo in the the directory "V41" and all directories and files 
+echo underneath to full access.
+echo.
+choice /c yeh /n /m "Choice: Y=yes to continue, E=exit to stop or H=help?"
+goto yeh%errorlevel%
+
+:yeh1
+cls
+echo.
+echo Start looking for directory "V41"
+goto mod1
+
+:yeh2
+echo.
+echo Script terminated!
+goto end
+
+:yeh3
+cls
+echo.
+echo There are 2 steps for best result.
+echo.
+echo 1 Run V41R*.exe in default settings and then
+echo.
+echo 2 immediately run this script with administrator rights.
+echo.
+choice /c ye /n /m "Choice: Y=yes to continue or E=exit to stop?"
+goto yeh%errorlevel%
+
+:mod1
+set var1="c:\Program Files\V41"
+if exist %var1% (goto mod5) else (goto mod2)
+
+:mod2
+set var1="c:\Program Files (x86)\V41"
+if exist %var1% (goto mod5) else (goto mod3)
+
+:mod3
+set var1="c:\V41"
+if exist %var1% (goto mod5) else (
+echo.
+echo Directory "V41" not found.
+echo.
+goto mod4)
+
+:mod4
+set var1=Drive, pad and directoryname
+set /p var1=Enter drive, pad and directoryname manually ...  
+set var1="%var1%"
+if exist %var1% (goto mod5) else (goto mod6)
+
+:mod5
+echo.
+echo Found %var1%
+echo.
+icacls %var1% /grant *S-1-5-32-545:(OI)(CI)(F)
+echo.
+goto res%errorlevel%
+
+:res0
+echo Permissions for %var1% are successfully changed.
+goto end
+
+:res5
+echo ERROR
+echo You have to run this command script as ADMINISTRATOR!
+goto end
+
+:mod6
+echo.
+echo %var1% not found.
+echo.
+choice /c ame /n /m "Choice: A=again, M=manual instructions or E=exit to stop?"
+goto ame%errorlevel%
+
+:ame1
+echo.
+echo Example:   C:\Program Files\V41
+echo.
+goto mod4
+
+:ame2
+cls
+echo.
+echo    Run this as administrator.
+echo.
+echo  1 Open the properties on the V41 directory.
+echo.
+echo  2 On the first tab Clear the Read-only attribute and press 
+echo    Apply for all files including subdirectory.
+echo.
+echo  3 Open the security tab and give users full access
+echo    to the V41 directory. 
+goto end
+
+:ame3
+echo.
+echo Script terminated!
+goto end
+
+:end
+echo.
+echo Press any key to close this screen . . . > CON:
+pause > NUL:

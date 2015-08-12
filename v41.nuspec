@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>v41</id>
+    <title>v41 (Install)</title>
+    <version>8E</version>
+    <authors>Warren Furlow</authors>
+    <owners>Roberto Nogueira</owners>
+    <summary>H-41 emulator</summary>
+    <description>
+From its introduction in 1979 until final production in 1990, the Hewlett Packard 41 Series Programmable Calculator reigned supreme as the trusted companion of professionals and students worldwide. Its instant success was due to innovation, quality and a well established base of loyal customers. The HP-41 became the object of fascination to a vast following of dedicated enthusiasts which sprang up to explore its intricacies and possibilities. Even today, its classic design makes it a useful and collectable tool with yet a few surprises left. This site is dedicated to documenting and preserving this amazing machine.
+    </description>
+    <projectUrl>http://www.hp41.org</projectUrl>
+    <packageSourceUrl>http://www.hp41.org</packageSourceUrl>
+    <tags>HP-41 v41 emulator</tags>
+    <copyright></copyright>
+    <licenseUrl>http://www.hp41.org/LibView.cfm?Command=View&ItemID=458</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/enogrob/virt-dimension/master/virt-dimension.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
